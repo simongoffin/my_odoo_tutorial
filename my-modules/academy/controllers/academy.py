@@ -15,7 +15,7 @@ class academy(main.Home):
     @http.route('/', auth='none')
     def index(self):
         tas = [
-            '<li><a href="/tas/?id=%d">%s</a></li>' % (i, ta['name'])
+            '<li><a href="/tas/%d/">%s</a></li>' % (i, ta['name'])
             for i, ta in enumerate(teaching_assistants)
         ]
 
@@ -32,7 +32,7 @@ class academy(main.Home):
         'tas': '\n'.join(tas)
     }
 
-    @http.route('/tas', auth='none')
+    @http.route('/tas/<int:id>/', auth='none')
     def ta(self, id):
         return """<!doctype html>
 <html>
@@ -44,4 +44,4 @@ class academy(main.Home):
         <h1>%(name)s</h1>
     </body>
 </html>
-""" % teaching_assistants[int(id)]
+""" % teaching_assistants[id]
