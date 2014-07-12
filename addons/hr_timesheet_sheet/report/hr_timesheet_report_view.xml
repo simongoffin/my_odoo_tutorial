@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_timesheet_report_graph" model="ir.ui.view">
+            <field name="name">timesheet.report.graph</field>
+            <field name="model">hr.timesheet.report</field>
+            <field name="inherit_id" ref="hr_timesheet.view_hr_timesheet_report_graph"/>
+            <field name="arch" type="xml">
+                <field name="user_id" position="after">
+                    <field name="state" type="row"/>
+                </field>
+                <field name="cost" position="after">
+                    <field name="total_diff" type="measure"/>
+                    <field name="total_timesheet" type="measure"/>
+                    <field name="total_attendance" type="measure"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_timesheet_report_search" model="ir.ui.view">
+            <field name="name">timesheet.report.search</field>
+            <field name="model">hr.timesheet.report</field>
+            <field name="inherit_id" ref="hr_timesheet.view_hr_timesheet_report_search"/>
+            <field name="arch" type="xml">
+                <field name="account_id"  position="before">
+                    <filter icon="terp-document-new" string="Draft" domain="[('state','=','draft')]"/>
+                    <filter icon="terp-camera_test" string="Confirmed" domain="[('state','=','confirm')]"/>
+                    <filter icon="terp-dialog-close" string="Done" domain="[('state','=','done')]"/>
+                </field>
+                <field name="general_account_id" position="after">
+                    <field name="to_invoice"/>
+                    <field name="department_id"/>
+                    <field name="date_to"/>
+                    <field name="date_from"/>
+                </field>
+                <filter name="product" position="before">
+                    <filter string="Department" icon="terp-personal+" context="{'group_by':'department_id'}"/>
+                </filter>
+                <filter name="analytic_account" position="before">
+                    <filter string="Type of Invoicing" icon="terp-stock_symbol-selection" context="{'group_by':'to_invoice'}"/>
+                </filter>
+                <filter name="general_account" position="after">
+                    <filter string="Status" icon="terp-stock_effects-object-colorize" context="{'group_by':'state'}"/>
+                </filter>
+            </field>
+        </record>
+
+    </data>
+</openerp>
