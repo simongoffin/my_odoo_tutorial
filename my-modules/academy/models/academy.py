@@ -2,8 +2,7 @@
 from openerp.models import Model
 from openerp.fields import Char
 
-
-class academy(Model):
-    _name = "academy.academy"
+class TeachingAssistants(Model):
+    _name = "academy.tas"
 
     name = Char()
