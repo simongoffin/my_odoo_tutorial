@@ -1,29 +1,25 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "academy",
-
-    'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
-
+    'name': "Academy",
+    # short description, used as subtitles on modules listings
+    'summary': "",
+    # long description of module purpose
     'description': """
-        Long description of module's purpose
-    """,
+""",
+    # Who you are
+    'author': "",
+    'website': "",
 
-    'author': "Your Company",
-    'website': "http://www.yourcompany.com",
-
-    # Categories can be used to filter modules in modules listing
-    # Check <odoo>/addons/base/module/module_data.xml of the full list
+    # categories can be used to filter modules in modules listing
     'category': 'Uncategorized',
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'website'],
-    'data': ["security/ir.model.access.csv"],
-
-    'demo': ["data/academy_demo.xml"],
-
+    'depends': ['web'],
+    'data': [
+        'security/ir.model.access.csv',
+        'views/templates.xml',
+    ],
     'tests': [
     ],
 }
