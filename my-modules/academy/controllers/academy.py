@@ -11,6 +11,8 @@ class academy(main.Home):
             'tas': tas,
         })
 
-    @http.route('/tas/<int:id>/', auth='public', website=True)
-    def ta(self, id):
-        return http.request.render('academy.ta', teaching_assistants[id])
+    @http.route('/tas/<model("academy.tas"):ta>/', auth='public', website=True)
+    def ta(self, ta):
+        return http.request.render('academy.ta', {
+            'ta': ta,
+        })
