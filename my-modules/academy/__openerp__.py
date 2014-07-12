@@ -19,6 +19,7 @@
     'data': [
         'security/ir.model.access.csv',
         'views/templates.xml',
+        'data/teaching_assistants.xml',
     ],
     'tests': [
     ],
