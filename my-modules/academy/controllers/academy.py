@@ -12,12 +12,12 @@ teaching_assistants = [
 ]
 
 class academy(main.Home):
-    @http.route('/', auth='none')
+    @http.route('/', auth='public', website=True)
     def index(self):
         return http.request.render('academy.index', {
             'tas': teaching_assistants,
         })
 
-    @http.route('/tas/<int:id>/', auth='none')
+    @http.route('/tas/<int:id>/', auth='public', website=True)
     def ta(self, id):
         return http.request.render('academy.ta', teaching_assistants[id])
