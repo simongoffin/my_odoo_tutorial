@@ -14,12 +14,8 @@ teaching_assistants = [
 class academy(main.Home):
     @http.route('/', auth='none')
     def index(self):
-        tas = [
-            '<li><a href="/tas/%d/">%s</a></li>' % (i, ta['name'])
-            for i, ta in enumerate(teaching_assistants)
-        ]
         return http.request.render('academy.index', {
-            'tas': '\n'.join(tas)
+            'tas': teaching_assistants,
         })
 
     @http.route('/tas/<int:id>/', auth='none')

@@ -15,7 +15,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['web'],
+    'depends': ['website'],
     'data': [
         'security/ir.model.access.csv',
         'views/templates.xml',
