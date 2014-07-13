@@ -66,5 +66,11 @@
     </t>
 </template>
 
+<template id="simplify_events_list" inherit_id="website_event.index">
+    <xpath expr="//ol[hasclass('breadcrumb')]" position="replace"/>
+    <xpath expr="//ul[hasclass('media-list')]/li/div/div[1]" position="replace"/>
+    <xpath expr="//ul[hasclass('media-list')]/li/div/div[hasclass('text-muted')]" position="replace"/>
+</template>
+
     </data>
 </openerp>
