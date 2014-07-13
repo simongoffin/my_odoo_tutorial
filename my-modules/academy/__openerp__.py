@@ -17,10 +17,8 @@
     # any module necessary for this one to work correctly
     'depends': ['website', 'website_event'],
     'data': [
-        'security/ir.model.access.csv',
         'views/templates.xml',
         'data/records.xml',
-        'data/views.xml',
     ],
     'demo': [
         'demo/teaching_assistants.xml',

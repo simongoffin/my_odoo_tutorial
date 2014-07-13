@@ -1,2 +1,2 @@
 # -*- coding: utf-8 -*-
-import academy
+import res_partner

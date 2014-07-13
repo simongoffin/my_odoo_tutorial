@@ -1,19 +1,54 @@
 <openerp>
     <data>
-        <record id="padilla" model="academy.tas">
+        <record id="padilla_p" model="res.partner">
             <field name="name">Diana Padilla</field>
         </record>
-        <record id="carroll" model="academy.tas">
+        <record id="padilla" model="res.users">
+            <field name="login">padilla</field>
+            <field name="partner_id" ref="padilla_p"/>
+        </record>
+
+        <record id="carroll_p" model="res.partner">
             <field name="name">Jody Carroll</field>
         </record>
-        <record id="vaughn" model="academy.tas">
+        <record id="carroll" model="res.users">
+            <field name="login">carroll</field>
+            <field name="partner_id" ref="carroll_p"/>
+        </record>
+
+        <record id="vaughn_p" model="res.partner">
             <field name="name">Lester Vaughn</field>
         </record>
-        <record id="jimenez" model="academy.tas">
+        <record id="vaughn" model="res.users">
+            <field name="login">vaughn</field>
+            <field name="partner_id" ref="vaughn_p"/>
+        </record>
+
+        <record id="jimenez_p" model="res.partner">
             <field name="name">Paul Jimenez</field>
         </record>
-        <record id="harris" model="academy.tas">
+        <record id="jimenez" model="res.users">
+            <field name="login">jimenez</field>
+            <field name="partner_id" ref="jimenez_p"/>
+        </record>
+
+        <record id="harris_p" model="res.partner">
             <field name="name">Tanya Harris</field>
+        </record>
+        <record id="harris" model="res.users">
+            <field name="login">harris</field>
+            <field name="partner_id" ref="harris_p"/>
+        </record>
+
+        <record id="tas" model="res.groups">
+            <field name="name">Teaching Assistants</field>
+            <field name="users" eval="[
+                (4, ref('padilla')),
+                (4, ref('carroll')),
+                (4, ref('vaughn')),
+                (4, ref('jimenez')),
+                (4, ref('harris')),
+            ]"/>
         </record>
     </data>
 </openerp>

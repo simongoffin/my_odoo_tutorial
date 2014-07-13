@@ -31,11 +31,11 @@
                         </tr>
                         <tr t-foreach="lectures" t-as="lecture">
                             <td>
-                                <span t-field="lecture.date"
+                                <span t-field="lecture.date_begin"
                                       t-field-options='{"format": "long"}'/>
                             </td>
                             <td>
-                                <span t-field="lecture.date"
+                                <span t-field="lecture.date_begin"
                                       t-field-options='{"format": "EEE"}'/>
                             </td>
                             <td>
@@ -56,9 +56,9 @@
             <div class="oe_structure"/>
             <div class="oe_structure">
                 <div class="container">
-                    <h1 t-field="ta.name"/>
+                    <h1 t-field="ta.partner_id.name"/>
                     <h2>Biography</h2>
-                    <div t-field="ta.biography"/>
+                    <div t-field="ta.partner_id.biography"/>
                 </div>
             </div>
             <div class="oe_structure"/>
