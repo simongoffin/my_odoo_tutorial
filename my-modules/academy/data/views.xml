@@ -1,5 +1,15 @@
 <openerp>
     <data>
+        <record id="list_academy_lecture" model="ir.ui.view">
+            <field name="model">academy.lectures</field>
+            <field name="arch" type="xml">
+               <tree string="Lectures">
+                   <field name="name"/>
+                   <field name="date"/>
+               </tree>
+            </field>
+        </record>
+
         <record id="action_academy_lecture" model="ir.actions.act_window">
             <field name="name">Academy lectures</field>
             <field name="res_model">academy.lectures</field>

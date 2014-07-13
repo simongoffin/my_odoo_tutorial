@@ -12,5 +12,5 @@ class Lectures(Model):
     _name = 'academy.lectures'
     _order = 'date ASC'
 
-    name = Char(required=True)
-    date = Date(required=True)
+    name = Char(required=True, string="Name")
+    date = Date(required=True, string="Date")
