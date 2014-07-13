@@ -6,8 +6,10 @@ from openerp.addons.web.controllers import main
 class academy(main.Home):
     @http.route('/', auth='public', website=True)
     def index(self):
+        lectures = http.request.env['academy.lectures'].search([])
         tas = http.request.env['academy.tas'].search([])
         return http.request.render('academy.index', {
+            'lectures': lectures,
             'tas': tas,
         })
 
