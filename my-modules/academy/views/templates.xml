@@ -1,0 +1,70 @@
+<openerp>
+    <data>
+<template id="academy.index" name="Index">
+    <t t-call="website.layout">
+        <div id="wrap">
+            <div class="oe_structure"/>
+            <div class="oe_structure">
+                <div class="container">
+                    <h1>Introduction to a thing</h1>
+                    <h2>Course description</h2>
+                    <p>
+                        This course will provide a basic introduction to a thing, for
+                        motivated students with no prior experience in things. The course
+                        will focus on the discovery of things and the planning and
+                        organization necessary to handle things.
+                    </p>
+                    <h2>Teaching Assistants</h2>
+                    <ul>
+                        <li t-foreach="tas" t-as="ta">
+                            <a t-att-href="url_for('/tas/%d/' % ta['id'])">
+                                <span t-field="ta.name"/>
+                            </a>
+                        </li>
+                    </ul>
+                    <h2>Course Calendar</h2>
+                    <table class="table table-condensed table-hover">
+                        <tr>
+                            <th>Date</th>
+                            <th>Day</th>
+                            <th>Topic</th>
+                        </tr>
+                        <tr t-foreach="lectures" t-as="lecture">
+                            <td>
+                                <span t-field="lecture.date"
+                                      t-field-options='{"format": "long"}'/>
+                            </td>
+                            <td>
+                                <span t-field="lecture.date"
+                                      t-field-options='{"format": "EEE"}'/>
+                            </td>
+                            <td>
+                                <span t-field="lecture.name"/>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="oe_structure"/>
+        </div>
+    </t>
+</template>
+
+<template id="academy.ta" name="Teaching Assistant">
+    <t t-call="website.layout">
+        <div id="wrap">
+            <div class="oe_structure"/>
+            <div class="oe_structure">
+                <div class="container">
+                    <h1 t-field="ta.name"/>
+                    <h2>Biography</h2>
+                    <div t-field="ta.biography"/>
+                </div>
+            </div>
+            <div class="oe_structure"/>
+        </div>
+    </t>
+</template>
+
+    </data>
+</openerp>
