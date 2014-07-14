@@ -6,19 +6,33 @@ openerp.oepetstore = function(instance) {
 
     instance.oepetstore = {};
 
-    instance.oepetstore.HomePage = instance.web.Widget.extend({
+    instance.oepetstore.ColorInputWidget = instance.web.Widget.extend({
+        template: "ColorInputWidget",
         start: function() {
-            var products = new instance.oepetstore.ProductsWidget(this, ["cpu", "mouse", "keyboard", "graphic card", "screen"], "#00FF00");
-            products.appendTo(this.$el);
+            var self = this;
+            this.$el.find("input").change(function() {
+                self.input_changed();
+            });
+            self.input_changed();
+        },
+        input_changed: function() {
+            var color = "#";
+            color += this.$el.find(".oe_color_red").val();
+            color += this.$el.find(".oe_color_green").val();
+            color += this.$el.find(".oe_color_blue").val();
+            this.set("color", color);
         },
     });
 
-    instance.oepetstore.ProductsWidget = instance.web.Widget.extend({
-        template: "ProductsWidget",
-        init: function(parent, products, color) {
-            this._super(parent);
-            this.products = products;
-            this.color = color;
+    instance.oepetstore.HomePage = instance.web.Widget.extend({
+        template: "HomePage",
+        start: function() {
+            this.colorInput = new instance.oepetstore.ColorInputWidget(this);
+            this.colorInput.on("change:color", this, this.color_changed);
+            this.colorInput.appendTo(this.$el);
+        },
+        color_changed: function() {
+            this.$el.find(".oe_color_div").css("background-color", this.colorInput.get("color"));
         },
     });
 

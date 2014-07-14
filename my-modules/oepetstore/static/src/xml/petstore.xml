@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <templates xml:space="preserve">
-    <t t-name="ProductsWidget">
+    <t t-name="ColorInputWidget">
         <div>
-            <t t-foreach="widget.products" t-as="product">
-                <span class="oe_products_item" t-att-style="'background-color: ' + widget.color + ';'"><t t-esc="product"/></span><br/>
-            </t>
+            Red: <input type="text" class="oe_color_red" value="00"></input><br />
+            Green: <input type="text" class="oe_color_green" value="00"></input><br />
+            Blue: <input type="text" class="oe_color_blue" value="00"></input><br />
+        </div>
+    </t>
+    <t t-name="HomePage">
+        <div>
+            <div class="oe_color_div"></div>
         </div>
     </t>
 </templates>
