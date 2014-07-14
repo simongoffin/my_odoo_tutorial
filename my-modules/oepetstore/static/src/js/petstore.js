@@ -16,7 +16,8 @@ openerp.oepetstore = function(instance) {
     
     instance.oepetstore.GreetingsWidget = instance.web.Widget.extend({
         start: function() {
-        this.$el.append("<div>We are so happy to see you again in this menu!</div>");
+            console.log(this.getParent().$el );
+            // will print "div.oe_petstore_homepage" in the console
         },
     });
 
@@ -29,17 +30,8 @@ openerp.oepetstore = function(instance) {
         },
     });
     
-    instance.oepetstore.MySpanishClass = instance.oepetstore.MyClass.extend({
-        say_hello: function() {
-            this._super();
-            console.log("translation in Spanish: hola", this.name);
-        },
-    });
-
-    var my_object = new instance.oepetstore.MySpanishClass("Nicolas");
-    my_object.say_hello();
-    // print "hello Nicolas \n translation in Spanish: hola Nicolas" in the console
-
+    
+    
     var my_object = new instance.oepetstore.MyClass("Simon");
     my_object.say_hello();
     // print "hello Nicolas" in the console
