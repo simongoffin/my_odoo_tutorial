@@ -5,6 +5,12 @@ openerp.oepetstore = function(instance) {
     var QWeb = instance.web.qweb;
 
     instance.oepetstore = {};
+    
+    instance.oepetstore.HomePage = instance.web.Widget.extend({
+        start: function() {
+            this.$el.append("<div>Hello dear OpenERP user!</div>");
+        },
+    });
 
     instance.oepetstore.MyClass = instance.web.Class.extend({
         init: function(name) {
