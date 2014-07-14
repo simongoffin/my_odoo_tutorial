@@ -8,17 +8,7 @@ openerp.oepetstore = function(instance) {
     
     instance.oepetstore.HomePage = instance.web.Widget.extend({
         start: function() {
-            var greeting = new instance.oepetstore.GreetingsWidget(this);
-            greeting.appendTo(this.$el);
-            console.log(this.getChildren()[0].$el);
-            // will print "div.oe_petstore_greetings" in the console
-        },
-    });
-    
-    instance.oepetstore.GreetingsWidget = instance.web.Widget.extend({
-        start: function() {
-            console.log(this.getParent().$el );
-            // will print "div.oe_petstore_homepage" in the console
+            this.$el.append(QWeb.render("HomePageTemplate"));
         },
     });
 
