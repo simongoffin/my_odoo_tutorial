@@ -3,5 +3,6 @@
 <templates xml:space="preserve">
     <t t-name="HomePageTemplate">
         <div>Hello <t t-esc="widget.name"/></div>
+        <div><t t-esc="3+5"/></div>
     </t>
 </templates>
