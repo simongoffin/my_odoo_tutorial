@@ -2,6 +2,13 @@
 
 <templates xml:space="preserve">
     <t t-name="HomePageTemplate">
-        <div><t t-raw="some_html"/></div>
+        <div>
+            <t t-if="true == true">
+                true is true
+            </t>
+            <t t-if="true == false">
+                true is not true
+            </t>
+        </div>
     </t>
 </templates>
