@@ -3,11 +3,8 @@
 <templates xml:space="preserve">
 <t t-name="HomePageTemplate">
     <div>
-        <t t-foreach="widget.names" t-as="name">
-            <div>
-                Hello <t t-esc="name"/>
-            </div>
-        </t>
+        Input your name:
+        <input type="text" t-att-value="defaultName"/>
     </div>
-</t>    
+</t>
 </templates>
