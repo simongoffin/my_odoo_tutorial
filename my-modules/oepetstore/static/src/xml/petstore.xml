@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <templates xml:space="preserve">
-    <t t-name="HomePageTemplate">
-        <div>
-            <t t-if="true == true">
-                true is true
-            </t>
-            <t t-if="true == false">
-                true is not true
-            </t>
-        </div>
-    </t>
+<t t-name="HomePageTemplate">
+    <div>
+        <t t-foreach="widget.names" t-as="name">
+            <div>
+                Hello <t t-esc="name"/>
+            </div>
+        </t>
+    </div>
+</t>    
 </templates>

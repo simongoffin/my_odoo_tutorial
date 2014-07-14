@@ -10,7 +10,8 @@ openerp.oepetstore = function(instance) {
         template: "HomePageTemplate",
         init: function(parent) {
             this._super(parent);
-            this.name = "Simon";
+            this.names=["Simon","Moi","Ok"];
+
         },
         start: function() {
         },
