@@ -2,6 +2,6 @@
 
 <templates xml:space="preserve">
     <t t-name="HomePageTemplate">
-        <div>Hello <t t-esc="name"/></div>
+        <div>Hello <t t-esc="widget.name"/></div>
     </t>
 </templates>

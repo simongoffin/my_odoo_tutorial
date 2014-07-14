@@ -7,25 +7,14 @@ openerp.oepetstore = function(instance) {
     instance.oepetstore = {};
     
     instance.oepetstore.HomePage = instance.web.Widget.extend({
+        template: "HomePageTemplate",
+        init: function(parent) {
+            this._super(parent);
+            this.name = "Simon";
+        },
         start: function() {
-            this.$el.append(QWeb.render("HomePageTemplate", {name: "Simon"}));
         },
     });
-
-    instance.oepetstore.MyClass = instance.web.Class.extend({
-        init: function(name) {
-            this.name = name;
-        },
-        say_hello: function() {
-            console.log("hello", this.name);
-        },
-    });
-    
-    
-    
-    var my_object = new instance.oepetstore.MyClass("Simon");
-    my_object.say_hello();
-    // print "hello Nicolas" in the console
     
     instance.web.client_actions.add('petstore.homepage', 'instance.oepetstore.HomePage');
     
