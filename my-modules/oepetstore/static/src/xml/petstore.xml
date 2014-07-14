@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <templates xml:space="preserve">
-<t t-name="HomePageTemplate">
-    <div>
-        Input your name:
-        <input type="text" t-att-value="defaultName"/>
-    </div>
-</t>
+    <t t-name="ProductsWidget">
+        <div>
+            <t t-foreach="widget.products" t-as="product">
+                <span class="oe_products_item" t-att-style="'background-color: ' + widget.color + ';'"><t t-esc="product"/></span><br/>
+            </t>
+        </div>
+    </t>
 </templates>
