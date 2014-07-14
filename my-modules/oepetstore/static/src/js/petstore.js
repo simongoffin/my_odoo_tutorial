@@ -6,22 +6,20 @@ openerp.oepetstore = function(instance) {
 
     instance.oepetstore = {};
 
-    instance.oepetstore.HomePage = instance.web.Widget.extend({
-        start: function() {
-            console.log("pet store home page loaded");
+    instance.oepetstore.MyClass = instance.web.Class.extend({
+        init: function(name) {
+            this.name = name;
+        },
+        say_hello: function() {
+            console.log("hello", this.name);
         },
     });
+
+    var my_object = new instance.oepetstore.MyClass("Simon");
+    my_object.say_hello();
+    // print "hello Nicolas" in the console
     
     instance.web.client_actions.add('petstore.homepage', 'instance.oepetstore.HomePage');
     
-    instance.oepetstore.MyClass = instance.web.Class.extend({
-        say_hello: function() {
-            console.log("hello");
-        },
-    });
-    
-    var my_object = new instance.oepetstore.MyClass();
-    my_object.say_hello();
-    // print "hello" in the console
 }
 
