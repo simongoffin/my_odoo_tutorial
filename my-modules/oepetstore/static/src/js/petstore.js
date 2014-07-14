@@ -9,6 +9,14 @@ openerp.oepetstore = function(instance) {
     instance.oepetstore.HomePage = instance.web.Widget.extend({
         start: function() {
             this.$el.append("<div>Hello dear OpenERP user!</div>");
+            var greeting = new instance.oepetstore.GreetingsWidget(this);
+            greeting.appendTo(this.$el);
+        },
+    });
+    
+    instance.oepetstore.GreetingsWidget = instance.web.Widget.extend({
+        start: function() {
+        this.$el.append("<div>We are so happy to see you again in this menu!</div>");
         },
     });
 
