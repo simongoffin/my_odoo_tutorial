@@ -32,18 +32,31 @@ openerp.oepetstore = function(instance) {
     });
 
     instance.oepetstore.PetToysList = instance.web.Widget.extend({
-        template: "PetToysList",
-        start: function() {
-            var self = this;
-            new instance.web.Model("product.product").query(["name", "image"])
-                .filter([["categ_id.name", "=", "Pet Toys"]]).limit(5).all().then(function(result) {
-                _.each(result, function(item) {
-                    var $item = $(QWeb.render("PetToy", {item: item}));
-                    self.$el.append($item);
+    template: "PetToysList",
+    start: function() {
+        var self = this;
+        new instance.web.Model("product.product").query(["name", "image"])
+            .filter([["categ_id.name", "=", "Pet Toys"]]).limit(5).all().then(function(result) {
+            _.each(result, function(item) {
+                var $item = $(QWeb.render("PetToy", {item: item}));
+                self.$el.append($item);
+                $item.click(function() {
+                    self.item_clicked(item);
                 });
             });
-        },
-    });
+        });
+    },
+    item_clicked: function(item) {
+        this.do_action({
+            type: 'ir.actions.act_window',
+            res_model: "product.product",
+            res_id: item.id,
+            views: [[false, 'form']],
+            target: 'current',
+            context: {},
+        });
+    },
+});
 
 }
 
