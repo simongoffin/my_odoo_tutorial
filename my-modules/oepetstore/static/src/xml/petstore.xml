@@ -12,6 +12,16 @@
             <p class="oe_mywidget_message_of_the_day"></p>
         </div>
     </t>
+    <t t-name="FieldColor">
+        <div class="oe_field_color">
+            <t t-if="widget.get('effective_readonly')">
+                <div class="oe_field_color_content" />
+            </t>
+            <t t-if="! widget.get('effective_readonly')">
+                <input type="color"></input>
+            </t>
+        </div>
+    </t>
     <t t-name="PetToysList">
         <div class="oe_petstore_pettoyslist">
         </div>
