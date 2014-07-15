@@ -16,6 +16,7 @@ A wonderful application to sell pet toys.
         "petstore.xml",
         "petstore_data.xml",
         'views/oepetstore.xml',
+        'security/ir.model.access.csv'
     ],
     'depends' : ['sale_stock'],
     'js': ['static/src/js/*.js'],

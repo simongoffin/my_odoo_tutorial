@@ -1,5 +1,6 @@
-.oe_color_div {
-    width: 100px;
-    height: 100px;
-    margin: 10px;
+.oe_petstore_motd {
+    margin: 5px;
+    padding: 5px;
+    border-radius: 3px;
+    background-color: #F0EEEE;
 }

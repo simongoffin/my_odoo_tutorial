@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <templates xml:space="preserve">
-    <t t-name="ColorInputWidget">
-        <div>
-            Red: <input type="text" class="oe_color_red" value="00"></input><br />
-            Green: <input type="text" class="oe_color_green" value="00"></input><br />
-            Blue: <input type="text" class="oe_color_blue" value="00"></input><br />
+    <t t-name="HomePage">
+        <div class="oe_petstore_homepage">
         </div>
     </t>
-    <t t-name="HomePage">
-        <div>
-            <div class="oe_color_div"></div>
+    <t t-name="MessageofTheDay">
+        <div class="oe_petstore_motd">
+            <p class="oe_mywidget_message_of_the_day"></p>
         </div>
     </t>
 </templates>

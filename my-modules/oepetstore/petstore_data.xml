@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
     <data>
+        <record model="message_of_the_day" id="message1">
+            <field name="message">Voici mon premier message!</field>
+            <field name="color">#0000FF</field>
+        </record>
 
         <record id="product_category_pet" model="product.category">
             <field name="parent_id" ref="product.product_category_all"/>
