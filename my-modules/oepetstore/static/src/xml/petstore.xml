@@ -3,11 +3,23 @@
 <templates xml:space="preserve">
     <t t-name="HomePage">
         <div class="oe_petstore_homepage">
+            <div class="oe_petstore_homepage_left"></div>
+            <div class="oe_petstore_homepage_right"></div>
         </div>
     </t>
     <t t-name="MessageofTheDay">
         <div class="oe_petstore_motd">
             <p class="oe_mywidget_message_of_the_day"></p>
+        </div>
+    </t>
+    <t t-name="PetToysList">
+        <div class="oe_petstore_pettoyslist">
+        </div>
+    </t>
+    <t t-name="PetToy">
+        <div class="oe_petstore_pettoy">
+            <p><t t-esc="item.name"/></p>
+            <p><img t-att-src="'data:image/jpg;base64,'+item.image"/></p>
         </div>
     </t>
 </templates>
