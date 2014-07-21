@@ -18,6 +18,7 @@
     'depends': ['website', 'website_event'],
     'data': [
         'views/templates.xml',
+        'security/ir.model.access.csv',
         'data/records.xml',
     ],
     'demo': [
